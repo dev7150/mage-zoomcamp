@@ -23,8 +23,7 @@ blocks:
     file_source:
       path: transformers/transform_taxi_data.py
   downstream_blocks:
-  - taxi_to_gcs_parquet
-  - taxi_to_gcs_partitioned_parquet
+  - export_taxi_to_gcp_parameter
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -45,30 +44,14 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: taxi_to_gcs_parquet
+  name: export_taxi_to_gcp_parameter
   retry_config: null
   status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
   - transform_taxi_data
-  uuid: taxi_to_gcs_parquet
-- all_upstream_blocks_executed: true
-  color: null
-  configuration: {}
-  downstream_blocks: []
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: taxi_to_gcs_partitioned_parquet
-  retry_config: null
-  status: executed
-  timeout: null
-  type: data_exporter
-  upstream_blocks:
-  - transform_taxi_data
-  uuid: taxi_to_gcs_partitioned_parquet
+  uuid: export_taxi_to_gcp_parameter
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
@@ -80,7 +63,7 @@ executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: lively haiku
+name: load_to_gcp_parameterized
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -90,7 +73,7 @@ settings:
 spark_config: {}
 tags: []
 type: python
-updated_at: '2024-01-29 02:58:52'
-uuid: lively_haiku
+updated_at: '2024-01-29 04:00:26'
+uuid: load_to_gcp_parameterized
 variables_dir: /home/src/mage_data/magic-zoomcamp
 widgets: []

@@ -1,0 +1,11 @@
+triggers:
+- envs: []
+  name: gcs_to_bq_schedule
+  pipeline_uuid: gcs_to_bigquery
+  schedule_interval: '@daily'
+  schedule_type: time
+  settings: {}
+  sla: null
+  start_time: 2024-01-29 03:31:00
+  status: inactive
+  variables: {}
